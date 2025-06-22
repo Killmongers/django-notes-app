@@ -12,7 +12,7 @@ services:
       - django_app
     networks:
       - notes-app-nw
-  web:
+  django_app:
     image: "killmongerms/notes-app:latest"
     container_name: "django_cont"
     ports:
