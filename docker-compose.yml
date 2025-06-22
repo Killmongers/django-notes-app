@@ -12,12 +12,8 @@ services:
       - django_app
     networks:
       - notes-app-nw
-
-  django_app:
-    build:
-      context: .
-    image: django_app
-    container_name: "django_cont"
+  web:
+    image:killmongerms/notes-app:latest
     ports:
       - "8000:8000"
     command: sh -c "python manage.py migrate --noinput && gunicorn notesapp.wsgi --bind 0.0.0.0:8000"
