@@ -13,7 +13,7 @@ services:
     networks:
       - notes-app-nw
   web:
-    image:killmongerms/notes-app:latest
+    image: "killmongerms/notes-app:latest"
     ports:
       - "8000:8000"
     command: sh -c "python manage.py migrate --noinput && gunicorn notesapp.wsgi --bind 0.0.0.0:8000"
